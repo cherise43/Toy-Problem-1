@@ -1,8 +1,33 @@
-def two_positive(a, b, c):
-    # Logic to determine if exactly two numbers are positive
-    return "result"
-    
-# Examples
-print(two_positive(2, 4, -3))  # Output: True
-print(two_positive(-4, 6, 8))  # Output: True
-# ...
+def solve(s):
+    def consonant_value(substring):
+        value = 0
+        for char in substring:
+            value += ord(char) - ord('a') + 1
+        return value
+
+    consonant_substrings = []
+    current_substring = ""
+
+    for char in s:
+        if char not in "aeiou":
+            current_substring += char
+        else:
+            if current_substring:
+                consonant_substrings.append(current_substring)
+            current_substring = ""
+
+    if current_substring:
+        consonant_substrings.append(current_substring)
+
+    max_value = 0
+    for substring in consonant_substrings:
+        value = consonant_value(substring)
+        if value > max_value:
+            max_value = value
+
+    return max_value
+
+
+print(solve("zodiacs"))  # Output :26
+print(solve("cathy"))  # Output: 53
+

@@ -1,7 +1,0 @@
-def convert_to_24_hour(hour, minute, period):
-    # Conversion logic here
-    return "formatted_time"
-    
-# Examples
-print(convert_to_24_hour(8, 30, "am"))  # Output: "0830"
-print(convert_to_24_hour(8, 30, "pm"))  # Output: "2030"
